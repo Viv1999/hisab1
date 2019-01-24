@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "838774881298",
+    "firebase_url": "https://hisab-d373a.firebaseio.com",
+    "project_id": "hisab-d373a",
+    "storage_bucket": "hisab-d373a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:838774881298:android:947a61e08f301896",
+        "android_client_info": {
+          "package_name": "com.vivek.hisab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "838774881298-aa3lu8uh658bmmf1sot5rrmg6ahi0j2l.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vivek.hisab",
+            "certificate_hash": "75442aae6a472af59ead4d3ba9bb7edb0b8115c0"
+          }
+        },
+        {
+          "client_id": "838774881298-nkmpq78ie487bbcc1nv0t6877jnpmfm7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC5-mImrR_TrEMEFl0n_coomkZxRKmC7p8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "838774881298-nkmpq78ie487bbcc1nv0t6877jnpmfm7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
