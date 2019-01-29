@@ -70,6 +70,7 @@ public class SignupActivity extends AppCompatActivity implements View.OnClickLis
                         progressDialog.dismiss();
                         if(task.isSuccessful()){
                             //profile activity
+                            startActivity(new Intent(SignupActivity.this,Profile2Activity.class));
                             Toast.makeText(SignupActivity.this,"Registered successfully",Toast.LENGTH_SHORT).show();
                         }
                         else{

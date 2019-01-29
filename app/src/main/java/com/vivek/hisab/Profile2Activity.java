@@ -12,8 +12,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.widget.TextView;
 
@@ -33,6 +36,9 @@ public class Profile2Activity extends AppCompatActivity implements BottomNavigat
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile2);
         FirebaseApp.initializeApp(this);
+        Toolbar toolbar = (androidx.appcompat.widget.Toolbar)findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -40,6 +46,27 @@ public class Profile2Activity extends AppCompatActivity implements BottomNavigat
         mTextMessage = (TextView) findViewById(R.id.message);
         BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch(item.getItemId()){
+            case R.id.action_settings:
+                mAuth.signOut();
+                finish();
+                startActivity(new Intent(this,MainActivity.class));
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
@@ -50,13 +77,13 @@ public class Profile2Activity extends AppCompatActivity implements BottomNavigat
             switch (item.getItemId()) {
                 case R.id.navigation_home:
 
-                    mTextMessage.setText(R.string.title_home);
+
                     return true;
                 case R.id.navigation_dashboard:
-                    mTextMessage.setText(R.string.title_dashboard);
+
                     return true;
                 case R.id.navigation_notifications:
-                    mTextMessage.setText(R.string.title_notifications);
+
                     return true;
             }
             return false;
@@ -117,4 +144,6 @@ public class Profile2Activity extends AppCompatActivity implements BottomNavigat
         }
         return false;
     }
+
+
 }
