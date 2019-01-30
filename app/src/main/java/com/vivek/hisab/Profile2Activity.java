@@ -64,6 +64,11 @@ public class Profile2Activity extends AppCompatActivity implements BottomNavigat
                 finish();
                 startActivity(new Intent(this,MainActivity.class));
                 break;
+            case R.id.profile_settings:
+                finish();
+                startActivity(new Intent(this,MoreInfo.class));
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

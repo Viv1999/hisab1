@@ -46,6 +46,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         if(mAuth.getCurrentUser() != null){
             // start profile acivity
+            finish();
+            startActivity(new Intent(this,Profile2Activity.class));
         }
         login.setOnClickListener(this);
         signup.setOnClickListener(this);
@@ -64,7 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Toast.makeText(this,"Please enter a password",Toast.LENGTH_SHORT);
         }
 
-        progressDialog.setMessage("Registering please wait ..........");
+        progressDialog.setMessage("Logging in please wait ..........");
         progressDialog.show();
 
         mAuth.signInWithEmailAndPassword(mailId,pass)
@@ -75,6 +77,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         if(task.isSuccessful()){
                             Toast.makeText(MainActivity.this,"Login sucessfull",Toast.LENGTH_SHORT).show();
                             // start profile activity
+                            finish();
+                            startActivity(new Intent(MainActivity.this,Profile2Activity.class));
                         }
                     }
                 });
